@@ -21,14 +21,7 @@ import java.util.ArrayList;
  * create an instance of this fragment.
  */
 public class PokemonListFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     private OnFragmentInteractionListener mListener;
 
@@ -36,31 +29,14 @@ public class PokemonListFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment PokemonListFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static PokemonListFragment newInstance(String param1, String param2) {
+    public static PokemonListFragment newInstance() {
         PokemonListFragment fragment = new PokemonListFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -71,17 +47,17 @@ public class PokemonListFragment extends Fragment {
         ListView pokemonListView = (ListView) view.findViewById(R.id.pokemon_listView);
 
         ArrayList<Pokemon> pokemonList = new ArrayList<>();
-        pokemonList.add(new Pokemon("1", "Bulbasaur", Pokemon.Type.PLANT));
-        pokemonList.add(new Pokemon("2", "Ivysaur", Pokemon.Type.PLANT));
-        pokemonList.add(new Pokemon("3", "Venuasaur", Pokemon.Type.PLANT));
-        pokemonList.add(new Pokemon("4", "Charmander", Pokemon.Type.FIRE));
-        pokemonList.add(new Pokemon("5", "Charmeleon", Pokemon.Type.FIRE));
-        pokemonList.add(new Pokemon("6", "Charizard", Pokemon.Type.FIRE));
-        pokemonList.add(new Pokemon("7", "Squirtle", Pokemon.Type.WATER));
-        pokemonList.add(new Pokemon("8", "Wartortle", Pokemon.Type.WATER));
-        pokemonList.add(new Pokemon("9", "Blastoise", Pokemon.Type.WATER));
-        pokemonList.add(new Pokemon("25", "Pikachu", Pokemon.Type.ELECTRIC));
-        pokemonList.add(new Pokemon("26", "Raichu", Pokemon.Type.ELECTRIC));
+        pokemonList.add(new Pokemon("1", "Bulbasaur", Pokemon.Type.PLANT, R.drawable.bulbasaur));
+        pokemonList.add(new Pokemon("2", "Ivysaur", Pokemon.Type.PLANT,R.drawable.ivysaur));
+        pokemonList.add(new Pokemon("3", "Venuasaur", Pokemon.Type.PLANT,R.drawable.venusaur));
+        pokemonList.add(new Pokemon("4", "Charmander", Pokemon.Type.FIRE,R.drawable.charmander));
+        pokemonList.add(new Pokemon("5", "Charmeleon", Pokemon.Type.FIRE,R.drawable.charmeleon));
+        pokemonList.add(new Pokemon("6", "Charizard", Pokemon.Type.FIRE,R.drawable.charizard));
+        pokemonList.add(new Pokemon("7", "Squirtle", Pokemon.Type.WATER,R.drawable.squirtle));
+        pokemonList.add(new Pokemon("8", "Wartortle", Pokemon.Type.WATER,R.drawable.wartortle));
+        pokemonList.add(new Pokemon("9", "Blastoise", Pokemon.Type.WATER,R.drawable.blastoise));
+        pokemonList.add(new Pokemon("25", "Pikachu", Pokemon.Type.ELECTRIC,R.drawable.pikachu));
+        pokemonList.add(new Pokemon("26", "Raichu", Pokemon.Type.ELECTRIC,R.drawable.raichu));
 
         final PokemonListAdapter adapter = new PokemonListAdapter(getActivity(), R.layout.pokemon_list_item,
                 pokemonList);
