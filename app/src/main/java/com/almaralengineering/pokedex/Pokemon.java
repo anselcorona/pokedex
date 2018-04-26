@@ -6,7 +6,6 @@ public class Pokemon {
     private Type type;
     private int imageId;
 
-
     public enum Type {
         FIRE, WATER, PLANT, ELECTRIC
     }
@@ -27,7 +26,6 @@ public class Pokemon {
     public String getName() {
         return name;
     }
-
 
     public Type getType() {
         return type;
