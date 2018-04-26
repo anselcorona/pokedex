@@ -47,17 +47,17 @@ public class PokemonListFragment extends Fragment {
         ListView pokemonListView = (ListView) view.findViewById(R.id.pokemon_listView);
 
         ArrayList<Pokemon> pokemonList = new ArrayList<>();
-        pokemonList.add(new Pokemon("1", "Bulbasaur", Pokemon.Type.PLANT, R.drawable.bulbasaur));
-        pokemonList.add(new Pokemon("2", "Ivysaur", Pokemon.Type.PLANT,R.drawable.ivysaur));
-        pokemonList.add(new Pokemon("3", "Venuasaur", Pokemon.Type.PLANT,R.drawable.venusaur));
-        pokemonList.add(new Pokemon("4", "Charmander", Pokemon.Type.FIRE,R.drawable.charmander));
-        pokemonList.add(new Pokemon("5", "Charmeleon", Pokemon.Type.FIRE,R.drawable.charmeleon));
-        pokemonList.add(new Pokemon("6", "Charizard", Pokemon.Type.FIRE,R.drawable.charizard));
-        pokemonList.add(new Pokemon("7", "Squirtle", Pokemon.Type.WATER,R.drawable.squirtle));
-        pokemonList.add(new Pokemon("8", "Wartortle", Pokemon.Type.WATER,R.drawable.wartortle));
-        pokemonList.add(new Pokemon("9", "Blastoise", Pokemon.Type.WATER,R.drawable.blastoise));
-        pokemonList.add(new Pokemon("25", "Pikachu", Pokemon.Type.ELECTRIC,R.drawable.pikachu));
-        pokemonList.add(new Pokemon("26", "Raichu", Pokemon.Type.ELECTRIC,R.drawable.raichu));
+        pokemonList.add(new Pokemon("1", "Bulbasaur", Pokemon.Type.PLANT, R.drawable.bulbasaur, R.raw.bulbasaur));
+        pokemonList.add(new Pokemon("2", "Ivysaur", Pokemon.Type.PLANT,R.drawable.ivysaur, R.raw.ivysaur));
+        pokemonList.add(new Pokemon("3", "Venuasaur", Pokemon.Type.PLANT,R.drawable.venusaur, R.raw.venasaur));
+        pokemonList.add(new Pokemon("4", "Charmander", Pokemon.Type.FIRE,R.drawable.charmander, R.raw.charmander));
+        pokemonList.add(new Pokemon("5", "Charmeleon", Pokemon.Type.FIRE,R.drawable.charmeleon, R.raw.charmeleon));
+        pokemonList.add(new Pokemon("6", "Charizard", Pokemon.Type.FIRE,R.drawable.charizard, R.raw.charizard));
+        pokemonList.add(new Pokemon("7", "Squirtle", Pokemon.Type.WATER,R.drawable.squirtle, R.raw.squirtle));
+        pokemonList.add(new Pokemon("8", "Wartortle", Pokemon.Type.WATER,R.drawable.wartortle, R.raw.wartortle));
+        pokemonList.add(new Pokemon("9", "Blastoise", Pokemon.Type.WATER,R.drawable.blastoise, R.raw.blastoise));
+        pokemonList.add(new Pokemon("25", "Pikachu", Pokemon.Type.ELECTRIC,R.drawable.pikachu, R.raw.pikachu));
+        pokemonList.add(new Pokemon("26", "Raichu", Pokemon.Type.ELECTRIC,R.drawable.raichu, R.raw.raichu));
 
         final PokemonListAdapter adapter = new PokemonListAdapter(getActivity(), R.layout.pokemon_list_item,
                 pokemonList);

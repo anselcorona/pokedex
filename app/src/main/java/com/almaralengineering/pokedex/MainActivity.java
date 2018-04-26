@@ -22,5 +22,6 @@ public class MainActivity extends AppCompatActivity implements PokemonListFragme
     public void onPokemonSelected(Pokemon pokemon) {
         DetailFragment detailFragment = (DetailFragment) getSupportFragmentManager().findFragmentById(R.id.detail_fragment);
         detailFragment.setPokemonImage(pokemon.getImageId());
+        detailFragment.playPokemonSound(pokemon.getSoundId());
     }
 }

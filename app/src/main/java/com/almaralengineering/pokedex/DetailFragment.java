@@ -2,6 +2,7 @@ package com.almaralengineering.pokedex;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -41,6 +42,10 @@ public class DetailFragment extends Fragment {
         detailImageView = (ImageView) view.findViewById(R.id.pokemon_detail_imageView);
 
         return view;
+    }
+    public void playPokemonSound(int soundId){
+        MediaPlayer mediaPlayer = MediaPlayer.create(getActivity(), soundId);
+        mediaPlayer.start();
     }
 
     public void setPokemonImage(int pokemonimageId){
