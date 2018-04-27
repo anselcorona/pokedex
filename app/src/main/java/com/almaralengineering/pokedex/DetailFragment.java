@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.squareup.picasso.Picasso;
 
 
 public class DetailFragment extends Fragment {
@@ -48,8 +49,8 @@ public class DetailFragment extends Fragment {
         mediaPlayer.start();
     }
 
-    public void setPokemonImage(int pokemonimageId){
-        detailImageView.setImageDrawable(ContextCompat.getDrawable(getActivity(), pokemonimageId));
+    public void setPokemonImage(String pokemonImageUrl){
+        Picasso.get().load(pokemonImageUrl).into(detailImageView);
     }
 
     @Override

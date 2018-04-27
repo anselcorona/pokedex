@@ -5,17 +5,17 @@ public class Pokemon {
     private String id;
     private String name;
     private Type type;
-    private int imageId;
+    private String imageurl;
 
     public enum Type {
         FIRE, WATER, PLANT, ELECTRIC
     }
 
-    public Pokemon(String id, String name, Type type, int imageId, int soundId) {
+    public Pokemon(String id, String name, Type type, String imageurl, int soundId) {
         this.id = id;
         this.name = name;
         this.type = type;
-        this.imageId = imageId;
+        this.imageurl = imageurl;
         this.soundId = soundId;
     }
 
@@ -23,7 +23,7 @@ public class Pokemon {
         return soundId;
     }
 
-    public int getImageId(){ return imageId; }
+    public String getImageurl(){ return imageurl; }
 
     public String getId() {
         return id;
