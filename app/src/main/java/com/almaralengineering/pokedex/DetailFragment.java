@@ -19,20 +19,19 @@ public class DetailFragment extends Fragment {
     private ImageView detailImageView;
 
 
-
-    private OnFragmentInteractionListener mListener;
-
     public DetailFragment() {
         // Required empty public constructor
     }
+    public static DetailFragment newInstance(String pokemonImageUrl, int pokemonSoundId) {
 
+        Bundle args = new Bundle();
 
+        args.putString("image", pokemonImageUrl);
+        args.putInt("sound", pokemonSoundId);
+        DetailFragment fragment = new DetailFragment();
 
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
+        fragment.setArguments(args);
+        return fragment;
     }
 
     @Override
@@ -42,35 +41,30 @@ public class DetailFragment extends Fragment {
 
         detailImageView = (ImageView) view.findViewById(R.id.pokemon_detail_imageView);
 
+        if(getArguments()!=null){
+            String image = getArguments().getString("image");
+            int sound = getArguments().getInt("sound");
+
+            setPokemonImage(image);
+            playPokemonSound(sound);
+        }
+
         return view;
     }
-    public void playPokemonSound(int soundId){
+    private void playPokemonSound(int soundId){
         MediaPlayer mediaPlayer = MediaPlayer.create(getActivity(), soundId);
         mediaPlayer.start();
     }
 
-    public void setPokemonImage(String pokemonImageUrl){
+    private void setPokemonImage(String pokemonImageUrl){
         Picasso.get().load(pokemonImageUrl).into(detailImageView);
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
+
 
     @Override
     public void onDetach() {
         super.onDetach();
-        mListener = null;
     }
 
-    public interface OnFragmentInteractionListener {
-        void onFragmentInteraction(Uri uri);
-    }
 }

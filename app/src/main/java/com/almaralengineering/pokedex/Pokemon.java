@@ -6,17 +6,23 @@ public class Pokemon {
     private String name;
     private Type type;
     private String imageurl;
+    private Stats stats;
 
     public enum Type {
         FIRE, WATER, PLANT, ELECTRIC
     }
 
-    public Pokemon(String id, String name, Type type, String imageurl, int soundId) {
+    public Pokemon(String id, String name, Type type, String imageurl, int soundId, Stats stats) {
         this.id = id;
         this.name = name;
         this.type = type;
         this.imageurl = imageurl;
         this.soundId = soundId;
+        this.stats = stats;
+    }
+
+    public Stats getStats() {
+        return stats;
     }
 
     public int getSoundId() {
